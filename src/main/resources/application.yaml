@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ecommerce-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce
+    username: postgres
+    password: postgres
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      repositories:
+        enabled: false
+
+  cache:
+    type: redis
+
+jwt:
+  secret: SchimbaAceastaCheieSecretaPentruProductieCuMinim32DeCaractere!!
+  expiration-ms: 86400000
+
+cors:
+  allowed-origin-patterns:
+    - "http://localhost:*"
+    - "http://127.0.0.1:*"
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+  api-docs:
+    path: /v3/api-docs

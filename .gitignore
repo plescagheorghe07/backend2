@@ -1,0 +1,125 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+*.hprof
+
+# Spring / logs
+*.log
+logs/
+spring.log
+application-local.yaml
+application-local.yml
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+
+# IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+.bin/
+.factorypath
+
+# NetBeans
+nbproject/
+nbbuild/
+nbdist/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editors
+*.swp
+*.swo
+*~
+.history/
+
+# Test / coverage
+*.exec
+jacoco.exec
+.cache/
+
+# Course media and documents
+*.pdf
+*.pptx
+*.ppt
+*.ppsx
+*.pps
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.odt
+*.odp
+*.ods
+
+# Video / audio
+*.mov
+*.mp4
+*.m4v
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.webm
+*.mpeg
+*.mpg
+*.3gp
+*.mp3
+*.wav
+*.aac
+*.flac
+*.ogg
+*.m4a
+
+# Archives (materiale de curs)
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.tgz
+
+# Images dumped from slides
+*.psd
+*.ai
