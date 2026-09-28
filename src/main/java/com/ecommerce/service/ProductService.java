@@ -22,12 +22,16 @@ public class ProductService {
     @Cacheable(cacheNames = "products", key = "#categoryId != null ? #categoryId : 'all'")
     @Transactional(readOnly = true)
     public List<ProductResponse> list(Long categoryId) {
-        List<Product> products = categoryId == null
-                ? productRepository.findAll()
-                : productRepository.findByCategoryId(categoryId);
-        return products.stream()
+        return findProducts(categoryId).stream()
                 .map(this::toResponse)
                 .toList();
+    }
+
+    private List<Product> findProducts(Long categoryId) {
+        if (categoryId == null) {
+            return productRepository.findAll();
+        }
+        return productRepository.findByCategoryId(categoryId);
     }
 
     @CacheEvict(cacheNames = "products", allEntries = true)

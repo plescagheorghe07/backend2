@@ -1,6 +1,6 @@
-# E-Commerce Backend (Anul 2, lectiile 1-3)
+# E-Commerce Backend (Anul 2, lectiile 1-4)
 
-Backend Spring Boot pentru platforma de e-commerce. Acopera REST, PostgreSQL, JWT, Redis si Swagger.
+Backend Spring Boot pentru platforma de e-commerce. Acopera REST, PostgreSQL, JWT, Redis, Swagger si SOLID.
 
 ## Cerinte
 
@@ -27,6 +27,7 @@ Aplicatia porneste pe `http://localhost:8080`.
 - Practica HTTP: `/api/practice` (GET, POST, PUT, PATCH, DELETE)
 - Register: `POST /api/auth/register`
 - Login: `POST /api/auth/login`
+- Utilizator curent: `GET /api/auth/me` (JWT)
 - Produse: `GET /api/products`
 - Categorii: `GET /api/categories`
 - Golire cache: `DELETE /api/cache`

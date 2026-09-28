@@ -52,7 +52,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             // reincarc userul din DB ca sa refuzam tokenul daca contul a disparut
             if (SecurityContextHolder.getContext().getAuthentication() == null) {
                 userRepository.findById(userId).ifPresent(user -> {
-                    var authorities = List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()));
+                    var authorities = List.of(new SimpleGrantedAuthority(user.getRole().authority()));
                     var authentication = new UsernamePasswordAuthenticationToken(user.getEmail(), null, authorities);
                     authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authentication);

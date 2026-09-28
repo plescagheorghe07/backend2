@@ -4,8 +4,10 @@ import com.ecommerce.domain.Role;
 import com.ecommerce.domain.User;
 import com.ecommerce.dto.auth.AuthResponse;
 import com.ecommerce.dto.auth.LoginRequest;
+import com.ecommerce.dto.auth.MeResponse;
 import com.ecommerce.dto.auth.RegisterRequest;
 import com.ecommerce.exception.ConflictException;
+import com.ecommerce.exception.UnauthorizedException;
 import com.ecommerce.repository.UserRepository;
 import com.ecommerce.security.JwtService;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -56,6 +58,13 @@ public class AuthService {
         }
 
         return toAuthResponse(user);
+    }
+
+    @Transactional(readOnly = true)
+    public MeResponse me(String email) {
+        User user = userRepository.findByEmailIgnoreCase(email)
+                .orElseThrow(() -> new UnauthorizedException("Token invalid"));
+        return new MeResponse(user.getEmail(), user.getRole().name());
     }
 
     private AuthResponse toAuthResponse(User user) {
